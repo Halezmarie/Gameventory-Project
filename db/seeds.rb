@@ -5,5 +5,7 @@
 require "faker"
 
 20.times do 
-    User.create(game: Faker::Title.name)
+
+    User.create(game: Faker: Title.name)
+    
 end

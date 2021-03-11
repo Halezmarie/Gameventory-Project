@@ -39,9 +39,6 @@ class GameItemsController < ApplicationController
       redirect "users/#{current_user.id}"
     end
   end
-
-
-
  
   patch '/game_items/:id' do
     

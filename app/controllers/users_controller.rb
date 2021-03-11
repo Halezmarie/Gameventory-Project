@@ -7,7 +7,7 @@ get '/signup' do
 
 post '/signup' do
     if User.find_by(email: params[:email])
-      flash[:message] = "Whoops! This email is already in use. Try again!"
+      flash[:message] = "Oh no! This email is already in use. Try again!"
       redirect to '/signup'
     end
     if params[:name] != "" && params[:email] != "" && params[:password] != ""

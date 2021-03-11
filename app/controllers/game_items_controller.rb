@@ -55,6 +55,16 @@ class GameItemsController < ApplicationController
     end
     redirect '/'
   end
-#
+
+  delete '/game_items/:id/delete' do
+    @game_item = GameItem.find_by(id: params[:id])
+      if logged_in? && @game_item.user.id == current_user.id
+      @game_item.destroy
+      flash[:message] =
+      redirect '/game_items'
+    else
+      redirect '/game_items'
+    end
+  end
 
 end

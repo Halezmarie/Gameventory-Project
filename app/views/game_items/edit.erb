@@ -1,0 +1,48 @@
+
+<div class="container">
+
+
+  <form class="" action="/game_items/<%=@game_item.id%>" method="post">
+    <font color="white"><h1>Edit Your Game Here: </h1></font>
+    <!-- title -->
+    <div class="form-group">
+      <input type="hidden" name="_method" value="patch">
+      <b><font color="white"><label for="name">Title: </label></font color></b>
+    <input type="text" name="title"  value="<%=@game_item.title %>"class="form-control" required>
+    </div>
+
+    <!-- genre  -->
+   <div class="form-group">
+       <input type="hidden" name="_method" value="patch">
+     <b><font color="white"><label for="genre">Genre:</label></font color></b>
+     <input type="text" name="genre" value="<%=@game_item.genre %>" class="form-control">
+   </div>
+
+   <!-- image URL  -->
+   <div class="form-group">
+       <input type="hidden" name="_method" value="patch">
+    <b><font color="white"><label for="url">Image URL:</label></font color></b>
+    <input type="text" name="url" value="<%=@game_item.url %>"class="form-control">
+   </div>
+
+
+   <!-- Rating -->
+    <div class="form-group">
+        <input type="hidden" name="_method" value="patch">
+      <b><font color="white"><label for="rating">Rating:</label></font color></b>
+      <input type="text" name="rating" value="<%=@game_item.rating %>"class="form-control">
+    </div>
+
+    <br><br><br>
+      <input type="submit" name="" value="Save Your Changes">
+  </form>
+</div>
+
+  </form>
+
+  <br><br><br>
+
+  <form method="post" action="/game_items/<%= @game_item.id %>/delete">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Game">
+  </form>

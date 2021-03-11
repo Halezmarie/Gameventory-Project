@@ -1,0 +1,14 @@
+<font color="white"><h1><%= @current_user.name %>'s Super Awesome Gameventory </h1></font>
+
+<br><br><br>
+
+<% @game_items.each do |game_item| %>
+<b><font color="white"><%= game_item.genre %></font color></b><br>
+   <b><font color="white"><%=game_item.title %></font color></b><br>
+   <b><font color="white"><%= game_item.rating %></font color></b><br>
+   <img src="<%=game_item.url%>" height="200" width="200">
+
+  <h4><a href="/game_items/<%=game_item.id%>"><%= game_item.created_at %></a></h4><br><br>
+<% end %>
+
+    

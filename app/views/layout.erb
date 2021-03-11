@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+    body {
+      background-image:url(https://wdgrpodcast.files.wordpress.com/2020/05/f0798ec5bb841350f6c960d5de5fbb1c.jpg);
+      }
+
+    </style>
+    <title>Gameventory</title>
+
+  </head>
+  <body>
+    <div class="container">
+      <br><br>
+      <%if logged_in? %>
+      <div class="nav">
+      <a href="/users/:id"> Your Super Awesome Gameventory </a><br>
+      <a href="/game_items/new">Create a Game</a><br>
+        <a href="/game_items"> All of the Games on GameVentory</a><br>
+        <a href="/logout">Logout</a><br>
+      </div>
+        <%end %>
+          <% if flash[:message] %>
+            <h5><%= flash[:message]%></h5>
+          <% end %>
+
+
+
+        <div class="wrapper">
+          <%= yield %>
+
+<br><br><br>
+
+
+      <footer class="branding"><br>
+        <font color="white">&copy; 2021 <strong>Gameventory</strong></font>
+      </footer>
+    </div>
+  </body>
+</html>

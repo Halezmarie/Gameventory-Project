@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
       !!current_user
     end
 
-    #locates current user with session id, puts in insta. var
+    #locates current user with session id, puts in insta. var to be stored 
     def current_user 
     @current_user ||= User.find_by(id: session[:user_id])
     end

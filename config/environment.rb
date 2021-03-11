@@ -7,6 +7,8 @@ configure :development do
     set :database, 'sqlite3:db/database.db'
 end
 
+#or 
+
 ActiveRecord::Base.establish_connection(
 :adapter => "sqlite3",
 :database => "db/database.db"

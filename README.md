@@ -13,7 +13,7 @@ Users can create an account to keep track of their games and to see games that o
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at ********** This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct. 
+Bug reports and pull requests are welcome on GitHub at https://github.com/Halezmarie/Gameventory-Project This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct. 
 
 ## License
 

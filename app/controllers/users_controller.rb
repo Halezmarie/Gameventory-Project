@@ -32,7 +32,7 @@ post '/login' do
      session[:user_id] = @user.id 
      redirect to "/users/#{@user.id}"
    else
-     flash[:message] = "Whoops! Try again!"
+     flash[:message] = "Oh no! Try again!"
      redirect to '/login'
    end
  end

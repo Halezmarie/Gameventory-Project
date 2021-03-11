@@ -60,7 +60,7 @@ class GameItemsController < ApplicationController
     @game_item = GameItem.find_by(id: params[:id])
       if logged_in? && @game_item.user.id == current_user.id
       @game_item.destroy
-      flash[:message] = "You deleted the game without any problems"
+      flash[:message] = "You deleted the game without any problems!"
       redirect '/game_items'
     else
       redirect '/game_items'

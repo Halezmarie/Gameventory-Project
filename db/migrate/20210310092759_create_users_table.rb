@@ -3,8 +3,7 @@ class CreateUsersTable < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.string :password_digest 
-      #keeps passwords private 
+      t.string :password_digest  
       t.timestamps null: false
     end
   end

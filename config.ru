@@ -11,3 +11,9 @@ use Rack::MethodOverride
 use UsersController
 use GameItemsController
 run ApplicationController
+
+
+
+rake db:migrate
+
+rake db:seed

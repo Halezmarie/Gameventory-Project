@@ -2,13 +2,13 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
 
-  #creates an unqiue id for sessions to give security 
+  #this creates an unqiue id for sessions to give security 
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "password_security" 
-    register Sinatra::Flash
+    register Sinatra::Flash #message will show if it passes 
   end
 
   get '/' do

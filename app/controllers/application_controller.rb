@@ -8,20 +8,25 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "password_security" 
-    register Sinatra::Flash #message will show if it passes 
+    register Sinatra::Flash #message will show, may delete later b/c I can't figure out how to change font color
   end
 
+  #HTTP GET request from a browser, go to welcome.erb, the '/'' signifies the path 
   get '/' do
     erb :welcome
+    #ERB is a Ruby class, known for templating system. erb is embedded ruby, view files will use erb so we can write html code 
+    #
   end
 
 
-  helpers do
 
-# if logged in, true if not false
+  # helpers do #helper method to help make it DRY
+
+# if logged in, true if not then false - is !! boolean
     def logged_in?
       !!current_user
     end
+
 
     #locates current user with session id, puts in insta. var to be stored 
     def current_user 
@@ -31,9 +36,7 @@ class ApplicationController < Sinatra::Base
     #when logged in, it is redirecting - if statement 
     def redirect_if_not_logged_in
       if !logged_in?
-        redirect '/'
+        redirect '/welcome' 
     end
   end
-
   end
-end

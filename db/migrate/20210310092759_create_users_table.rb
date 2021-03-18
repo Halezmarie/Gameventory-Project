@@ -8,3 +8,5 @@ class CreateUsersTable < ActiveRecord::Migration[5.2]
     end
   end
 end
+
+#digest keeps passwords private, make name/email 

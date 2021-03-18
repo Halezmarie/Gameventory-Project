@@ -89,7 +89,7 @@ DEPENDENCIES
   sinatra-flash
   sqlite3 (~> 1.3.7)
   thin
-  tux (~> 0.3.0)
+  tux
 
 BUNDLED WITH
    2.2.4

@@ -1,12 +1,17 @@
 <% @game_items.each do |game_item| %>
 
   <b><font color="white"><%= game_item.genre %><font color="white">
-  </b><br>
-     <b><%=game_item.title %>
-  </b><br>
-     <b><%= game_item.rating %>
-  </b><br>
   
+  </b><br>
+
+     <b><%=game_item.title %>
+
+  </b><br>
+
+     <b><%= game_item.rating %>
+
+  </b><br>
+
      <img src="<%=game_item.url%>" height="200" width="200">
   
      <h5><a href="/game_items/<%=game_item.id%>"><%= game_item.created_at %></a></h5>

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_092759) do
     t.string "genre"
     t.string "url"
     t.string "rating"
-    t.integer "user_id"
+    t.integer "user_id" #will bring to next table, the users table 
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2021_03_10_092759) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", null: false #automatically created 
+    t.datetime "updated_at", null: false # automatically created 
   end
 
 end

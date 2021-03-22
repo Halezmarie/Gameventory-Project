@@ -1,11 +1,11 @@
 # here is where we will create some see date to work with and test associations
 
-#create  user
+#create  users
 
-# require "faker"
+    icarus= User.create(name: "Icarus", email: "icarus@icarus.com", password: "password")
+    anastasia= User.create(name: "Anastasia", email: "anastasia@anastasia.com", password: "password")
 
-# 20.times do 
+GameItem.create(title: "Mortal Kombat", genre: "Fighting", url: "https://happymag.tv/wp-content/uploads/2020/03/mortal-kombat-2.jpg", rating: "M", user_id: icarus.id)
 
-#     User.create(game: Faker: Title.name)
-    
-# end
+GameItem.create(title: "Final Fantasy 7", genre: "Role-Playing", url: "https://upload.wikimedia.org/wikipedia/en/c/c2/Final_Fantasy_VII_Box_Art.jpg", rating: "T", user_id: anastasia.id)
+

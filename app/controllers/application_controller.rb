@@ -12,7 +12,6 @@ class ApplicationController < Sinatra::Base
     register Sinatra::Flash #message will show, may delete later b/c I can't figure out how to change font color
   end
 
-  #HTTP GET request from a browser, go to welcome.erb, the '/'' signifies the path 
   get '/' do
     if logged_in?
       redirect "/users/#{current_user.id}"

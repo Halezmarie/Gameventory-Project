@@ -11,24 +11,25 @@
  <img src="<%=@game_item.url%>" height="400" width="400">
 
 
-      <br>
-      <font color="white"><%  if @game_item.user_id == current_user.id %>
+<br>
 
-      <b></br>
+<font color="white"><%  if @game_item.user_id == current_user.id %>
 
-      <a href='/game_items/<%=@game_item.id%>/edit'> Edit Game</a><br>
+<b></br>
 
-      <b></br>
+<a href='/game_items/<%=@game_item.id%>/edit'> Edit Game</a><br>
+
+b></br>
 
 
-      <form class="" action='/game_items/<%=@game_item.id%>/delete' method="post">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" name="" value="Delete this Game">
-      </form>
+  <form class="" action='/game_items/<%=@game_item.id%>/delete' method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" name="" value="Delete this Game">
+  </form>
 
      
-      <a href="/">Back</a>
+  <a href="/">Back</a>
       
       <% end %></font>
-    </head>
-    </html>
+</head>
+</html>

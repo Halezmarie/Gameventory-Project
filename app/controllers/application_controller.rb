@@ -19,7 +19,6 @@ class ApplicationController < Sinatra::Base
     erb :welcome
     end
     #ERB is a Ruby class, known for templating system. erb is embedded ruby, view files will use erb so we can write html code 
-    #
   end
 
 

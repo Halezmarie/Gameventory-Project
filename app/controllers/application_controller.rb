@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "password_security" 
-    register Sinatra::Flash #message will show, may delete later b/c I can't figure out how to change font color
+    register Sinatra::Flash 
   end
 
   get '/' do

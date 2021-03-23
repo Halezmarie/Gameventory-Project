@@ -1,6 +1,5 @@
 class GameItemsController < ApplicationController
 
-
   get '/game_items' do
     @game_items = GameItem.all
     erb :'game_items/index'
@@ -12,16 +11,15 @@ class GameItemsController < ApplicationController
   end
 
   post '/game_items' do
-    if !logged_in? && params[:title] != ""
-      redirect '/'
-    else
-        
+      redirect_if_not_logged_in
+    if params[:title] != ""
         @game_item = GameItem.create(title: params[:title], genre: params[:genre], url: params[:url], rating: params[:rating], user_id: current_user.id)
         flash[:message] = "Woohoo, your game has been created without any problems!"
         redirect to "/game_items/#{@game_item.id}"
-    end
+    else
       redirect to '/game_items/new'
   end
+end
 
 
   get '/game_items/:id' do
@@ -41,7 +39,6 @@ class GameItemsController < ApplicationController
   end
  
   patch '/game_items/:id' do
-    
     @game_item = GameItem.find_by(id: params[:id])
     if logged_in? && @game_item.user == current_user
         @game_item.update(title: params[:title], genre: params[:genre], rating: params[:rating], url: params[:url])

@@ -11,22 +11,27 @@
   </head>
   <body>
     <div class="container">
+
       <br><br>
-      <%if logged_in? %>
+      
       <div class="nav">
+        <%if logged_in? %>
       <a href="/users/:id"> Your Super Awesome Gameventory </a><br>
       <a href="/game_items/new">Create a Game</a><br>
-        <a href="/game_items"> All of the Games on GameVentory</a><br>
-        <a href="/logout">Logout</a><br>
-      </div>
+      <a href="/game_items"> All of the Games on GameVentory</a><br>
+      <a href="/logout">Logout</a><br>
         <%end %>
-          <% if flash[:message] %>
-            <h5><%= flash[:message]%></h5>
-          <% end %>
-
-
+      </div>
 
         <div class="wrapper">
+          <% if flash[:message] %>
+        <h4><%= flash[:message] %></h4>
+        <% end %>
+        <% if flash[:errors] %>
+        <h4 style="color: white;"><%= flash[:errors] %></h4>
+        <% end %>
+
+
           <%= yield %>
 
 <br><br><br>

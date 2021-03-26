@@ -5,7 +5,7 @@ require_relative './config/environment'
 # raise 'Migrations are pending. Run `rake db:migrate` to resolve the issue.'
 # end
 
-#lets me send PATCH and DELETE requests
+
 use Rack::MethodOverride
 
 

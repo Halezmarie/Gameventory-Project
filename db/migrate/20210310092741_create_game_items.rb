@@ -6,6 +6,7 @@ class CreateGameItems < ActiveRecord::Migration[5.2]
       t.string :url
       t.string :rating
       t.integer :user_id
+      
       t.timestamps null: false
    end
  end

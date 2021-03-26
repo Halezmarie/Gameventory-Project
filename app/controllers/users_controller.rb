@@ -45,6 +45,6 @@ post '/login' do
 
   get '/logout' do
     session.clear
-    redirect to '/'
+    redirect '/'
   end
 end

@@ -5,7 +5,6 @@ class GameItemsController < ApplicationController
     erb :'game_items/index'
   end
 
- #create games
   get '/game_items/new' do
     erb :'/game_items/new'
   end
@@ -28,9 +27,9 @@ end
   erb :'game_items/show'
   end
 
-  get '/game_items/:id/edit' do #loads the edit form
-    @game_item = GameItem.find_by(id: params[:id])
+  get '/game_items/:id/edit' do 
     redirect_if_not_logged_in
+    @game_item = GameItem.find_by(id: params[:id])
     if @game_item.user == current_user
         erb :'/game_items/edit'
       else
@@ -39,16 +38,17 @@ end
   end
  
   patch '/game_items/:id' do
+    redirect_if_not_logged_in
     @game_item = GameItem.find_by(id: params[:id])
     if logged_in? && @game_item.user == current_user
-        @game_item.update(title: params[:title], genre: params[:genre], rating: params[:rating], url: params[:url])
+      @game_item.update(title: params[:title], genre: params[:genre], rating: params[:rating], url: params[:url])
       flash[:message] = "Your game has been edited without any problems!"
       redirect "/game_items/#{params[:id]}"
     else
       redirect "/users/#{current_user.id}/show"
     end
-    redirect '/'
   end
+
 
   delete '/game_items/:id/delete' do
     @game_item = GameItem.find_by(id: params[:id])
@@ -61,4 +61,13 @@ end
     end
   end
 
+
+post '/search' do 
+  @game_item = GameItem.find_by(title: params[:game_items][:title])
+  if @game_item 
+    erb :'/game_items/result
+    
+   redirect '/game_items'
+  end
+end
 end

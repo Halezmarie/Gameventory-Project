@@ -65,9 +65,8 @@ end
 post '/search' do 
   @game_item = GameItem.find_by(title: params[:game_items][:title])
   if @game_item 
-    erb :'/game_items/result
-    
+    erb :'/game_items/result'
    redirect '/game_items'
-  end
+end
 end
 end

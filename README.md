@@ -8,7 +8,7 @@ In order to use Gameventory, clone this repo and run bundle install. Start the s
 
 ## Usage
 
-Users can create an account to keep track of their games and to see games that other uses have created.
+Users can create an account to keep track of their games and to see games that other users have created.
 
 
 ## Contributing
